@@ -2,9 +2,10 @@ import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/c
 import { HttpLoggerMiddleware } from './common/middleware/http-logger.middleware.js';
 import { BooksModule } from './books/books.module.js';
 import { UsersModule } from './users/users.module';
+import { CustomerAddressModule } from './customer-address/customer-address.module.js';
 
 @Module({
-  imports: [BooksModule, UsersModule],
+  imports: [BooksModule, UsersModule, CustomerAddressModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
