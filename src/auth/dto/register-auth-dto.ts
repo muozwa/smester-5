@@ -20,4 +20,8 @@ export class RegisterAuthDto {
     message: 'Password minimal 6 karakter',
   })
   password: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'Konfirmasi password wajib diisi' })
+  passwordConfirmation: string;
 }
